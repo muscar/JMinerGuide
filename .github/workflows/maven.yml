@@ -31,4 +31,4 @@ jobs:
         snyk auth "$SNYK_TOKEN"
         snyk test --reachable-vuln
       env:
-        SNYK_TOKEN: {{ secrete.SNYK_TOKEN }}
+        SNYK_TOKEN: ${{ secrete.SNYK_TOKEN }}
