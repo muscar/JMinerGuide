@@ -26,9 +26,10 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Run snyk test
+      shell: bash
       env:
         SNYK_TOKEN: {{ secrete.SNYK_TOKEN }}
       run: |
         npm i -g snyk
         snyk auth "$SNYK_TOKEN"
-        snyk test --reachable-vulns
+        snyk test --reachable-vuln
