@@ -20,5 +20,10 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - uses: actions/setup-node@v2-beta
+      with:
+        node-version: '12'
+    - name: Install the snyk CLI tool
+      run: npm i -g snyk
     - name: Build with Maven
       run: mvn -B package --file pom.xml
